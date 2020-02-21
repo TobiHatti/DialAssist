@@ -31,3 +31,4 @@ C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssis
 C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.csproj.CopyComplete
 C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.exe
 C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.pdb
+C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.csprojAssemblyReference.cache
