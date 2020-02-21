@@ -481,7 +481,17 @@ namespace DialAssist
                 { 'Z', "Zeppelin" },
                 { '@', "Et (@)" },
                 { '.', "Punkt" },
-                { '-', "Minus" }
+                { '-', "Minus" },
+                { '0', "Null (0)" },
+                { '1', "Eins (1)" },
+                { '2', "Zwo (2)" },
+                { '3', "Drei (3)" },
+                { '4', "Vier (4)" },
+                { '5', "Fünf (5)" },
+                { '6', "Sechs (6)" },
+                { '7', "Sieben (7)" },
+                { '8', "Acht (8)" },
+                { '9', "Neun (9)" }
             };
 
             StringBuilder sb = new StringBuilder();
