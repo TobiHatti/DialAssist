@@ -24,7 +24,6 @@ C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\MetroSet 
 C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\System.Data.SQLite.dll
 C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\System.Data.SQLite.xml
 C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\System.Data.SQLite.dll.config
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.csprojAssemblyReference.cache
 C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.DialAssist.resources
 C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.Properties.Resources.resources
 C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.Settings.resources

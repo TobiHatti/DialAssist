@@ -382,7 +382,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:LH Dial-Assist"
+        "ProductName" = "8:Dial-Assist"
         "ProductCode" = "8:{5DA73E50-59D2-4793-B164-592E31290E32}"
         "PackageCode" = "8:{1F42F4C7-B39C-421A-BF74-7FD8FEAF22B1}"
         "UpgradeCode" = "8:{0654476F-157C-478C-8781-2C878D90A96F}"
