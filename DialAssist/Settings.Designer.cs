@@ -87,7 +87,7 @@
             this.metroSetLabel1.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel1.StyleManager = null;
             this.metroSetLabel1.TabIndex = 17;
-            this.metroSetLabel1.Text = "Strikte Suche für Durchwahlen:";
+            this.metroSetLabel1.Text = "Strikte Suche für Anmerkungen:";
             this.metroSetLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.metroSetLabel1.ThemeAuthor = "Narwin";
             this.metroSetLabel1.ThemeName = "MetroLite";
@@ -101,7 +101,7 @@
             this.metroSetLabel2.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel2.StyleManager = null;
             this.metroSetLabel2.TabIndex = 17;
-            this.metroSetLabel2.Text = "Strikte Suche für Anmerkungen:";
+            this.metroSetLabel2.Text = "Strikte Suche für Durchwahlen:";
             this.metroSetLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.metroSetLabel2.ThemeAuthor = "Narwin";
             this.metroSetLabel2.ThemeName = "MetroLite";
