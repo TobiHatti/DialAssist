@@ -1,0 +1,16 @@
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Debug\DialAssist.exe.config
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Debug\DialAssist.exe
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Debug\DialAssist.pdb
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Debug\DialAssist.csprojAssemblyReference.cache
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Debug\DialAssist.Properties.Resources.resources
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Debug\DialAssist.csproj.GenerateResource.cache
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Debug\DialAssist.exe
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Debug\DialAssist.pdb
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Debug\x86\sqlite3.dll
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Debug\x64\sqlite3.dll
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Debug\MetroSet UI.dll
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Debug\System.Data.SQLite.dll
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Debug\System.Data.SQLite.xml
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Debug\DialAssist.csproj.CopyComplete
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Debug\DialAssist.DialAssist.resources
