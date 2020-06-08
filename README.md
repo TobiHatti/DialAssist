@@ -1,4 +1,4 @@
-<img align="right" width="80" height="80" src="https://github.com/TobiHatti/DialAssist/blob/master/DialAssist/LHDialAssistLogo.png">
+<img align="right" width="80" height="80" data-rmimg src="https://endev.at/content/projects/DialAssist/DialAssist_Logo_128.png">
 
 # Dial-Assist
 
@@ -9,6 +9,8 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/TobiHatti/DialAssist)](https://github.com/TobiHatti/DialAssist/issues)
 [![GitHub language count](https://img.shields.io/github/languages/count/TobiHatti/DialAssist)](https://github.com/TobiHatti/DialAssist)
 
-![image](https://github.com/TobiHatti/DialAssist/blob/master/ProductImages/MainScreen.jpg)
+![image](https://endev.at/content/projects/DialAssist/DialAssist_Banner_1080.png)
 
 Phonebook-Tool for Telephone-Exchanges [GER]
+
+![image](https://endev.at/content/projects/DialAssist/projectImages/MainScreen.jpg)
