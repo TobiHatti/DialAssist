@@ -9,7 +9,7 @@
 [![GitHub issues](https://img.shields.io/github/issues-raw/TobiHatti/DialAssist)](https://github.com/TobiHatti/DialAssist/issues)
 [![GitHub language count](https://img.shields.io/github/languages/count/TobiHatti/DialAssist)](https://github.com/TobiHatti/DialAssist)
 
-![image](https://endev.at/content/projects/DialAssist/DialAssist_Banner_1080.png)
+![image](https://endev.at/content/projects/DialAssist/DialAssist_Banner_300.png)
 
 Phonebook-Tool for Telephone-Exchanges [GER]
 
