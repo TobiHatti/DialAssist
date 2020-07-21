@@ -7,7 +7,6 @@ C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Release\MetroSet UI.dll
 C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Release\System.Data.SQLite.dll
 C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Release\System.Data.SQLite.xml
 C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\bin\Release\System.Data.SQLite.dll.config
-C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Release\DialAssist.csprojAssemblyReference.cache
 C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Release\DialAssist.DialAssist.resources
 C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Release\DialAssist.Properties.Resources.resources
 C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Release\DialAssist.csproj.GenerateResource.cache
@@ -15,20 +14,25 @@ C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Release\DialAssist.cspr
 C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Release\DialAssist.exe
 C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Release\DialAssist.pdb
 C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Release\DialAssist.Settings.resources
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\x86\sqlite3.dll
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\x64\sqlite3.dll
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\DialAssist.exe.config
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\DialAssist.exe
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\DialAssist.pdb
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\MetroSet UI.dll
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\System.Data.SQLite.dll
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\System.Data.SQLite.xml
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\bin\Release\System.Data.SQLite.dll.config
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.DialAssist.resources
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.Properties.Resources.resources
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.Settings.resources
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.csproj.GenerateResource.cache
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.csproj.CopyComplete
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.exe
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.pdb
-C:\Users\zivi\Desktop\Projects (GIT)\DialAssist\DialAssist\obj\Release\DialAssist.csprojAssemblyReference.cache
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Release\DialAssist.ExtDocuments.resources
+C:\Users\zivi\Desktop\Projects\DialAssist\DialAssist\obj\Release\DialAssist.ImageViewer.resources
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\bin\Release\x86\sqlite3.dll
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\bin\Release\x64\sqlite3.dll
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\bin\Release\DialAssist.exe.config
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\bin\Release\DialAssist.exe
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\bin\Release\DialAssist.pdb
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\bin\Release\MetroSet UI.dll
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\bin\Release\System.Data.SQLite.dll
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\bin\Release\System.Data.SQLite.xml
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\bin\Release\System.Data.SQLite.dll.config
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.csprojAssemblyReference.cache
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.DialAssist.resources
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.ExtDocuments.resources
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.ImageViewer.resources
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.Properties.Resources.resources
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.Settings.resources
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.csproj.GenerateResource.cache
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.csproj.CoreCompileInputs.cache
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.csproj.CopyComplete
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.exe
+U:\(06) Coding\(01) C#\(01) Projects [GIT]\DialAssist\DialAssist\obj\Release\DialAssist.pdb

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -15,16 +16,17 @@ namespace DialAssist
 {
     public partial class DialAssist : MetroSetForm
     {
-        private readonly string DataFile = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\DialAssist\phonebook.db";
-        private readonly string ConString = $@"URI=file:{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\DialAssist\phonebook.db";
-        private readonly string ConfigFile = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\DialAssist\config.db";
-        private readonly string ConStringConf = $@"URI=file:{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\DialAssist\config.db";
+        private readonly string DataFile = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\LH-DialAssist\phonebook.db";
+        private readonly string ConString = $@"URI=file:{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\LH-DialAssist\phonebook.db";
+        private readonly string ConfigFile = $@"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\LH-DialAssist\config.db";
+        private readonly string ConStringConf = $@"URI=file:{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}\LH-DialAssist\config.db";
         private SQLiteConnection connection = null;
         private SQLiteCommand cmd = null;
         private SQLiteConnection confConnection = null;
         private SQLiteCommand confCmd = null;
 
         private int selectedMember = 0;
+        private string MemberImgB64 = "";
 
         public DialAssist()
         {
@@ -34,14 +36,18 @@ namespace DialAssist
             CreateDBCon();
             CreateConfDBCon();
             LoadAllMembers();
+            ReloadDocuments();
 
             chbSearchNames.Switched = Convert.ToBoolean(SettingsPeek("SearchNames", true));
             chbSearchDW.Switched = Convert.ToBoolean(SettingsPeek("SearchDW", true));
             chbSearchNotes.Switched = Convert.ToBoolean(SettingsPeek("SearchNotes", false));
         }
 
-        private void LoadAllMembers()
+        private void LoadAllMembers(bool keepIndex = false)
         {
+            int prevSelect = 0;
+            if (keepIndex) prevSelect = cbxAllMembers.SelectedIndex;
+
             cbxAllMembers.DataSource = null;
             cbxAllMembers.Items.Clear();
 
@@ -65,6 +71,8 @@ namespace DialAssist
             cbxAllMembers.DataSource = dt;
             cbxAllMembers.DisplayMember = "DWName";
             cbxAllMembers.ValueMember = "ID";
+
+            if (keepIndex) cbxAllMembers.SelectedIndex = prevSelect;
         }
 
         private void CreateDBCon()
@@ -93,7 +101,7 @@ namespace DialAssist
             cmd = new SQLiteCommand(connection);
             if (!fileExitst)
             {
-                cmd.CommandText = @"CREATE TABLE 'Members' ('ID' INTEGER PRIMARY KEY AUTOINCREMENT, 'Name' TEXT, 'DW' TEXT, 'Mobile' TEXT, 'Email1' TEXT, 'Email2' TEXT, 'Email3' TEXT, 'Note' TEXT);";
+                cmd.CommandText = @"CREATE TABLE 'Members' ('ID' INTEGER PRIMARY KEY AUTOINCREMENT, 'Name' TEXT, 'DW' TEXT, 'Mobile' TEXT, 'Email1' TEXT, 'Email2' TEXT, 'Email3' TEXT, 'Note' TEXT, 'Image' TEXT);";
                 cmd.ExecuteNonQuery();
             }
 
@@ -156,7 +164,7 @@ namespace DialAssist
             else return result;
         }
 
-        public void SearchEntries()
+        private void SearchEntries()
         {
             List<string> searchParams = new List<string>();
 
@@ -225,7 +233,7 @@ namespace DialAssist
             lblResultCount.Text = $"{resCount} übereinstimmungen gefunden.";
         }
 
-        bool IsDigitsOnly(string str)
+        private bool IsDigitsOnly(string str)
         {
             foreach (char c in str)
             {
@@ -236,9 +244,13 @@ namespace DialAssist
             return true;
         }
 
-        public void SelectMember(int pID)
+        private void SelectMember(int pID)
         {
+            tmrLoadImage.Start();
             selectedMember = pID;
+
+            pbxMemberImage.Image = null;
+            MemberImgB64 = "";
 
             connection.Open();
 
@@ -251,7 +263,7 @@ namespace DialAssist
                     txbResultName.Text = Convert.ToString(reader["Name"]);
                     txbResultDW.Text = Convert.ToString(reader["DW"]);
 
-                    if (IsDigitsOnly(reader["DW"].ToString())) txbResultExtern.Text = "+00 (0) 0000 / 00000 " + Convert.ToString(reader["DW"]);
+                    if (IsDigitsOnly(reader["DW"].ToString())) txbResultExtern.Text = "+43 (0) 7672 / 27550 " + Convert.ToString(reader["DW"]);
                     else txbResultExtern.Text = "";
 
                     txbResultMobile.Text = Convert.ToString(reader["Mobile"]);
@@ -264,6 +276,108 @@ namespace DialAssist
             connection.Close();
         }
 
+        private void ReloadDocuments()
+        {
+            for (int i = cmsDocuments.Items.Count - 1; i >= 0; i--)
+            {
+                if (cmsDocuments.Items[i].Name == "tsmAddDocumentEntry" || cmsDocuments.Items[i].Name == "tssSeperator") continue;
+                else cmsDocuments.Items.RemoveAt(i);
+            }
+                
+
+            confConnection.Open();
+            confCmd.CommandText = "SELECT * FROM Settings WHERE Key LIKE 'DocEntry%'";
+            using(SQLiteDataReader reader = confCmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string value = Convert.ToString(reader["Value"]);
+                    string key = Convert.ToString(reader["Key"]);
+
+                    string[] docInfo = Convert.ToString(reader["Value"]).Split('|');
+
+                    string docName = Encoding.UTF8.GetString(Convert.FromBase64String(docInfo[0]));
+                    string docPath = Encoding.UTF8.GetString(Convert.FromBase64String(docInfo[1]));
+
+                    ToolStripMenuItem tmsMain = new ToolStripMenuItem(docName);
+                    ToolStripMenuItem tmsOpen = new ToolStripMenuItem("Öffnen");
+                    ToolStripMenuItem tmsEdit = new ToolStripMenuItem("Bearbeiten");
+                    ToolStripMenuItem tmsDelete = new ToolStripMenuItem("Entfernen");
+
+                    tmsMain.DropDownItems.Add(tmsOpen);
+                    tmsMain.DropDownItems.Add(tmsEdit);
+                    tmsMain.DropDownItems.Add(tmsDelete);
+
+                    tmsMain.Click += delegate { OpenDocuments(docPath); };
+                    tmsOpen.Click += delegate { OpenDocuments(docPath); };
+                    tmsEdit.Click += delegate { EditDocument(Convert.ToString(key)); };
+                    tmsDelete.Click += delegate { DeleteDocument(Convert.ToString(key)); };
+
+                    cmsDocuments.Items.Insert(0, tmsMain);
+                }
+            }
+            confConnection.Close();
+        }
+
+        private void OpenDocuments(string pDocPath)
+        {
+            if(Directory.Exists(Path.GetDirectoryName(pDocPath)) && File.Exists(pDocPath))
+            {
+                Process.Start(pDocPath);
+            }
+            else MessageBox.Show("Die Datei konnte nicht geöffnet werden. Möglicherweise wurde sie verschoben oder gelöscht.", "Datei konnte nicht geöffnet werden", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        }
+
+        private void EditDocument(string pDocID)
+        {
+            confConnection.Open();
+            confCmd.CommandText = $"SELECT * FROM Settings WHERE Key = '{pDocID}'";
+
+            string docName = "";
+            string docPath = "";
+
+            using (SQLiteDataReader reader = confCmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    string[] docInfo = Convert.ToString(reader["Value"]).Split('|');
+
+                    docName = Encoding.UTF8.GetString(Convert.FromBase64String(docInfo[0]));
+                    docPath = Encoding.UTF8.GetString(Convert.FromBase64String(docInfo[1]));
+                } 
+            }
+
+            confConnection.Close();
+
+            ExtDocuments editDoc = new ExtDocuments();
+
+            editDoc.DocumentName = docName;
+            editDoc.DocumentPath = docPath;
+           
+            if(editDoc.ShowDialog() == DialogResult.OK)
+            {
+                confConnection.Open();
+                confCmd.CommandText = $"UPDATE Settings SET Value = '{Convert.ToBase64String(Encoding.UTF8.GetBytes(editDoc.DocumentName)) + "|" + Convert.ToBase64String(Encoding.UTF8.GetBytes(editDoc.DocumentPath))}' WHERE Key = '{pDocID}'";
+                confCmd.ExecuteNonQuery();
+                confConnection.Close();
+            }
+
+            ReloadDocuments();
+        }
+
+        private void DeleteDocument(string pDocID)
+        {
+            confConnection.Open();
+
+            confCmd.CommandText = $"DELETE FROM Settings WHERE Key = '{pDocID}'";
+            confCmd.ExecuteNonQuery();
+
+            confConnection.Close();
+
+            ReloadDocuments();
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
             => SearchEntries();
 
@@ -271,6 +385,7 @@ namespace DialAssist
         {
             btnSaveEntry.Enabled = true;
             btnAbort.Enabled = true;
+            btnSelectImage.Enabled = true;
             txbResultName.Text = "";
             txbResultDW.Text = "";
             txbResultExtern.Text = "";
@@ -279,6 +394,9 @@ namespace DialAssist
             txbResultEmail2.Text = "";
             txbResultEmail3.Text = "";
             txbResultNote.Text = "";
+
+            MemberImgB64 = "";
+            pbxMemberImage.Image = null;
 
             txbResultName.ReadOnly = false;
             txbResultDW.ReadOnly = false;
@@ -290,12 +408,14 @@ namespace DialAssist
 
             selectedMember = 0;
 
+
         }
 
         private void btnSaveEntry_Click(object sender, EventArgs e)
         {
             btnSaveEntry.Enabled = false;
             btnAbort.Enabled = false;
+            btnSelectImage.Enabled = false;
 
             txbResultName.ReadOnly = true;
             txbResultDW.ReadOnly = true;
@@ -309,11 +429,11 @@ namespace DialAssist
 
             if (selectedMember == 0)
             {
-                cmd.CommandText = $@"INSERT INTO Members (Name, DW, Mobile, Email1, Email2, Email3, Note) VALUES ('{txbResultName.Text}','{txbResultDW.Text}','{txbResultMobile.Text}','{txbResultEmail1.Text}','{txbResultEmail2.Text}','{txbResultEmail3.Text}','{txbResultNote.Text}')";
+                cmd.CommandText = $@"INSERT INTO Members (Name, DW, Mobile, Email1, Email2, Email3, Note, Image) VALUES ('{txbResultName.Text}','{txbResultDW.Text}','{txbResultMobile.Text}','{txbResultEmail1.Text}','{txbResultEmail2.Text}','{txbResultEmail3.Text}','{txbResultNote.Text}','{MemberImgB64}')";
             }
             else
             {
-                cmd.CommandText = $@"UPDATE Members SET Name = '{txbResultName.Text}', DW = '{txbResultDW.Text}', Mobile = '{txbResultMobile.Text}', Email1 = '{txbResultEmail1.Text}', Email2 = '{txbResultEmail2.Text}', Email3 = '{txbResultEmail3.Text}', Note = '{txbResultNote.Text}' WHERE ID = '{selectedMember}'";
+                cmd.CommandText = $@"UPDATE Members SET Name = '{txbResultName.Text}', DW = '{txbResultDW.Text}', Mobile = '{txbResultMobile.Text}', Email1 = '{txbResultEmail1.Text}', Email2 = '{txbResultEmail2.Text}', Email3 = '{txbResultEmail3.Text}', Note = '{txbResultNote.Text}', Image = '{MemberImgB64}' WHERE ID = '{selectedMember}'";
             }
 
             cmd.ExecuteNonQuery();
@@ -321,7 +441,7 @@ namespace DialAssist
 
             MetroSetMessageBox.Show(this, "Eintrag gespeichert!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            LoadAllMembers();
+            LoadAllMembers(true);
         }
 
         private void cbxAllMembers_SelectedIndexChanged(object sender, EventArgs e)
@@ -337,6 +457,7 @@ namespace DialAssist
         {
             btnSaveEntry.Enabled = true;
             btnAbort.Enabled = true;
+            btnSelectImage.Enabled = true;
 
             txbResultName.ReadOnly = false;
             txbResultDW.ReadOnly = false;
@@ -373,6 +494,9 @@ namespace DialAssist
                 txbResultEmail2.Text = "";
                 txbResultEmail3.Text = "";
                 txbResultNote.Text = "";
+
+                MemberImgB64 = "";
+                pbxMemberImage.Image = null;
 
                 MetroSetMessageBox.Show(this, "Eintrag gelöscht!", "Erfolg", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadAllMembers();
@@ -420,6 +544,7 @@ namespace DialAssist
         {
             btnSaveEntry.Enabled = false;
             btnAbort.Enabled = false;
+            btnSelectImage.Enabled = false;
 
             txbResultName.ReadOnly = true;
             txbResultDW.ReadOnly = true;
@@ -550,6 +675,72 @@ namespace DialAssist
                 SettingsPoke("StrictSearchDW", settings.strictDW);
                 SettingsPoke("StrictSearchNotes", settings.strictNotes);
             }
+        }
+
+        private void metroSetButton1_Click(object sender, EventArgs e)
+        {
+            cmsDocuments.Show(btnOpenDocuments, 10, 10);
+        }
+
+        private void tsmAddDocumentEntry_Click(object sender, EventArgs e)
+        {
+            ExtDocuments addDocForm = new ExtDocuments();
+            
+            if(addDocForm.ShowDialog() == DialogResult.OK)
+            {
+                SettingsPoke("DocEntry" + Guid.NewGuid(), Convert.ToBase64String(Encoding.UTF8.GetBytes(addDocForm.DocumentName)) + "|" + Convert.ToBase64String(Encoding.UTF8.GetBytes(addDocForm.DocumentPath)));
+                ReloadDocuments();
+            }
+        }
+
+        private void btnSelectImage_Click(object sender, EventArgs e)
+        {
+            if (ofdSelectImage.ShowDialog() == DialogResult.OK)
+            {
+                using (Image image = Image.FromFile(ofdSelectImage.FileName))
+                {
+                    using (MemoryStream m = new MemoryStream())
+                    {
+                        image.Save(m, image.RawFormat);
+                        byte[] imageBytes = m.ToArray();
+
+                        MemberImgB64 = Convert.ToBase64String(imageBytes);
+                    }
+                }
+
+                pbxMemberImage.Image = Image.FromFile(ofdSelectImage.FileName);
+            }
+        }
+
+        private void tmrLoadImage_Tick(object sender, EventArgs e)
+        {
+            tmrLoadImage.Stop();
+            pbxMemberImage.Image = null;
+            MemberImgB64 = "";
+
+            connection.Open();
+
+            cmd.CommandText = $@"SELECT * FROM Members WHERE ID = {selectedMember}";
+
+            using (SQLiteDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    MemberImgB64 = Convert.ToString(reader["Image"]);
+                    if (!string.IsNullOrEmpty(MemberImgB64))
+                        pbxMemberImage.Image = Image.FromStream(new MemoryStream(Convert.FromBase64String(MemberImgB64)));
+                    else
+                        pbxMemberImage.Image = Properties.Resources.user;
+                }
+            }
+            connection.Close();
+        }
+
+        private void pbxMemberImage_Click(object sender, EventArgs e)
+        {
+            ImageViewer iv = new ImageViewer();
+            iv.ImageB64 = MemberImgB64;
+            iv.ShowDialog();
         }
     }
 }

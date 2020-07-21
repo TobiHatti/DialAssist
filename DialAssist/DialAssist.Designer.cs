@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DialAssist));
             this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             this.lbxResultView = new System.Windows.Forms.ListBox();
@@ -66,6 +67,17 @@
             this.metroSetLabel9 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel10 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetLabel11 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.btnOpenDocuments = new MetroSet_UI.Controls.MetroSetButton();
+            this.cmsDocuments = new MetroSet_UI.Controls.MetroSetContextMenuStrip();
+            this.tssSeperator = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmAddDocumentEntry = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSelectImage = new MetroSet_UI.Controls.MetroSetButton();
+            this.ofdSelectImage = new System.Windows.Forms.OpenFileDialog();
+            this.tmrLoadImage = new System.Windows.Forms.Timer(this.components);
+            this.metroSetLabel12 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.pbxMemberImage = new System.Windows.Forms.PictureBox();
+            this.cmsDocuments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMemberImage)).BeginInit();
             this.SuspendLayout();
             // 
             // metroSetControlBox1
@@ -75,7 +87,7 @@
             this.metroSetControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
             this.metroSetControlBox1.CloseNormalForeColor = System.Drawing.Color.Gray;
             this.metroSetControlBox1.DisabledForeColor = System.Drawing.Color.DimGray;
-            this.metroSetControlBox1.Location = new System.Drawing.Point(659, 6);
+            this.metroSetControlBox1.Location = new System.Drawing.Point(815, 8);
             this.metroSetControlBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.metroSetControlBox1.MaximizeBox = false;
             this.metroSetControlBox1.MaximizeHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -99,10 +111,10 @@
             this.lbxResultView.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbxResultView.FormattingEnabled = true;
             this.lbxResultView.ItemHeight = 23;
-            this.lbxResultView.Location = new System.Drawing.Point(12, 148);
+            this.lbxResultView.Location = new System.Drawing.Point(15, 153);
             this.lbxResultView.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.lbxResultView.Name = "lbxResultView";
-            this.lbxResultView.Size = new System.Drawing.Size(659, 119);
+            this.lbxResultView.Size = new System.Drawing.Size(618, 142);
             this.lbxResultView.TabIndex = 6;
             this.lbxResultView.DoubleClick += new System.EventHandler(this.lbxResultView_DoubleClick);
             this.lbxResultView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lbxResultView_KeyDown);
@@ -110,9 +122,9 @@
             // metroSetLabel1
             // 
             this.metroSetLabel1.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel1.Location = new System.Drawing.Point(14, 310);
+            this.metroSetLabel1.Location = new System.Drawing.Point(15, 323);
             this.metroSetLabel1.Name = "metroSetLabel1";
-            this.metroSetLabel1.Size = new System.Drawing.Size(100, 23);
+            this.metroSetLabel1.Size = new System.Drawing.Size(111, 20);
             this.metroSetLabel1.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel1.StyleManager = null;
             this.metroSetLabel1.TabIndex = 7;
@@ -123,9 +135,9 @@
             // metroSetLabel2
             // 
             this.metroSetLabel2.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel2.Location = new System.Drawing.Point(589, 310);
+            this.metroSetLabel2.Location = new System.Drawing.Point(653, 323);
             this.metroSetLabel2.Name = "metroSetLabel2";
-            this.metroSetLabel2.Size = new System.Drawing.Size(193, 23);
+            this.metroSetLabel2.Size = new System.Drawing.Size(214, 20);
             this.metroSetLabel2.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel2.StyleManager = null;
             this.metroSetLabel2.TabIndex = 7;
@@ -136,9 +148,9 @@
             // metroSetLabel3
             // 
             this.metroSetLabel3.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel3.Location = new System.Drawing.Point(14, 390);
+            this.metroSetLabel3.Location = new System.Drawing.Point(13, 408);
             this.metroSetLabel3.Name = "metroSetLabel3";
-            this.metroSetLabel3.Size = new System.Drawing.Size(228, 23);
+            this.metroSetLabel3.Size = new System.Drawing.Size(253, 20);
             this.metroSetLabel3.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel3.StyleManager = null;
             this.metroSetLabel3.TabIndex = 7;
@@ -149,9 +161,9 @@
             // metroSetLabel4
             // 
             this.metroSetLabel4.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel4.Location = new System.Drawing.Point(14, 463);
+            this.metroSetLabel4.Location = new System.Drawing.Point(12, 469);
             this.metroSetLabel4.Name = "metroSetLabel4";
-            this.metroSetLabel4.Size = new System.Drawing.Size(199, 23);
+            this.metroSetLabel4.Size = new System.Drawing.Size(221, 20);
             this.metroSetLabel4.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel4.StyleManager = null;
             this.metroSetLabel4.TabIndex = 7;
@@ -162,9 +174,9 @@
             // metroSetLabel5
             // 
             this.metroSetLabel5.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel5.Location = new System.Drawing.Point(14, 536);
+            this.metroSetLabel5.Location = new System.Drawing.Point(15, 535);
             this.metroSetLabel5.Name = "metroSetLabel5";
-            this.metroSetLabel5.Size = new System.Drawing.Size(199, 23);
+            this.metroSetLabel5.Size = new System.Drawing.Size(221, 20);
             this.metroSetLabel5.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel5.StyleManager = null;
             this.metroSetLabel5.TabIndex = 7;
@@ -181,16 +193,16 @@
             this.txbResultName.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txbResultName.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
             this.txbResultName.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.txbResultName.Font = new System.Drawing.Font("Calibri Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbResultName.Font = new System.Drawing.Font("Calibri Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbResultName.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.txbResultName.Image = null;
             this.txbResultName.Lines = null;
-            this.txbResultName.Location = new System.Drawing.Point(14, 336);
+            this.txbResultName.Location = new System.Drawing.Point(15, 345);
             this.txbResultName.MaxLength = 32767;
             this.txbResultName.Multiline = false;
             this.txbResultName.Name = "txbResultName";
             this.txbResultName.ReadOnly = true;
-            this.txbResultName.Size = new System.Drawing.Size(569, 41);
+            this.txbResultName.Size = new System.Drawing.Size(632, 51);
             this.txbResultName.Style = MetroSet_UI.Design.Style.Light;
             this.txbResultName.StyleManager = null;
             this.txbResultName.TabIndex = 1;
@@ -209,16 +221,16 @@
             this.txbResultDW.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.txbResultDW.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
             this.txbResultDW.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.txbResultDW.Font = new System.Drawing.Font("Calibri Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbResultDW.Font = new System.Drawing.Font("Calibri Light", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbResultDW.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.txbResultDW.Image = null;
             this.txbResultDW.Lines = null;
-            this.txbResultDW.Location = new System.Drawing.Point(589, 336);
+            this.txbResultDW.Location = new System.Drawing.Point(653, 345);
             this.txbResultDW.MaxLength = 32767;
             this.txbResultDW.Multiline = false;
             this.txbResultDW.Name = "txbResultDW";
             this.txbResultDW.ReadOnly = true;
-            this.txbResultDW.Size = new System.Drawing.Size(234, 41);
+            this.txbResultDW.Size = new System.Drawing.Size(260, 51);
             this.txbResultDW.Style = MetroSet_UI.Design.Style.Light;
             this.txbResultDW.StyleManager = null;
             this.txbResultDW.TabIndex = 2;
@@ -241,12 +253,12 @@
             this.txbResultExtern.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.txbResultExtern.Image = null;
             this.txbResultExtern.Lines = null;
-            this.txbResultExtern.Location = new System.Drawing.Point(14, 416);
+            this.txbResultExtern.Location = new System.Drawing.Point(15, 431);
             this.txbResultExtern.MaxLength = 32767;
             this.txbResultExtern.Multiline = false;
             this.txbResultExtern.Name = "txbResultExtern";
             this.txbResultExtern.ReadOnly = true;
-            this.txbResultExtern.Size = new System.Drawing.Size(413, 31);
+            this.txbResultExtern.Size = new System.Drawing.Size(458, 30);
             this.txbResultExtern.Style = MetroSet_UI.Design.Style.Light;
             this.txbResultExtern.StyleManager = null;
             this.txbResultExtern.TabIndex = 10;
@@ -269,12 +281,12 @@
             this.txbResultMobile.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.txbResultMobile.Image = null;
             this.txbResultMobile.Lines = null;
-            this.txbResultMobile.Location = new System.Drawing.Point(14, 489);
+            this.txbResultMobile.Location = new System.Drawing.Point(15, 492);
             this.txbResultMobile.MaxLength = 32767;
             this.txbResultMobile.Multiline = false;
             this.txbResultMobile.Name = "txbResultMobile";
             this.txbResultMobile.ReadOnly = true;
-            this.txbResultMobile.Size = new System.Drawing.Size(413, 31);
+            this.txbResultMobile.Size = new System.Drawing.Size(458, 30);
             this.txbResultMobile.Style = MetroSet_UI.Design.Style.Light;
             this.txbResultMobile.StyleManager = null;
             this.txbResultMobile.TabIndex = 3;
@@ -297,12 +309,12 @@
             this.txbResultEmail1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.txbResultEmail1.Image = null;
             this.txbResultEmail1.Lines = null;
-            this.txbResultEmail1.Location = new System.Drawing.Point(14, 562);
+            this.txbResultEmail1.Location = new System.Drawing.Point(15, 558);
             this.txbResultEmail1.MaxLength = 32767;
             this.txbResultEmail1.Multiline = false;
             this.txbResultEmail1.Name = "txbResultEmail1";
             this.txbResultEmail1.ReadOnly = true;
-            this.txbResultEmail1.Size = new System.Drawing.Size(380, 31);
+            this.txbResultEmail1.Size = new System.Drawing.Size(423, 30);
             this.txbResultEmail1.Style = MetroSet_UI.Design.Style.Light;
             this.txbResultEmail1.StyleManager = null;
             this.txbResultEmail1.TabIndex = 4;
@@ -325,12 +337,12 @@
             this.txbResultEmail2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.txbResultEmail2.Image = null;
             this.txbResultEmail2.Lines = null;
-            this.txbResultEmail2.Location = new System.Drawing.Point(13, 599);
+            this.txbResultEmail2.Location = new System.Drawing.Point(15, 594);
             this.txbResultEmail2.MaxLength = 32767;
             this.txbResultEmail2.Multiline = false;
             this.txbResultEmail2.Name = "txbResultEmail2";
             this.txbResultEmail2.ReadOnly = true;
-            this.txbResultEmail2.Size = new System.Drawing.Size(381, 31);
+            this.txbResultEmail2.Size = new System.Drawing.Size(423, 30);
             this.txbResultEmail2.Style = MetroSet_UI.Design.Style.Light;
             this.txbResultEmail2.StyleManager = null;
             this.txbResultEmail2.TabIndex = 5;
@@ -353,12 +365,12 @@
             this.txbResultEmail3.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.txbResultEmail3.Image = null;
             this.txbResultEmail3.Lines = null;
-            this.txbResultEmail3.Location = new System.Drawing.Point(13, 636);
+            this.txbResultEmail3.Location = new System.Drawing.Point(15, 630);
             this.txbResultEmail3.MaxLength = 32767;
             this.txbResultEmail3.Multiline = false;
             this.txbResultEmail3.Name = "txbResultEmail3";
             this.txbResultEmail3.ReadOnly = true;
-            this.txbResultEmail3.Size = new System.Drawing.Size(381, 31);
+            this.txbResultEmail3.Size = new System.Drawing.Size(423, 30);
             this.txbResultEmail3.Style = MetroSet_UI.Design.Style.Light;
             this.txbResultEmail3.StyleManager = null;
             this.txbResultEmail3.TabIndex = 6;
@@ -381,12 +393,12 @@
             this.txbResultNote.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.txbResultNote.Image = null;
             this.txbResultNote.Lines = null;
-            this.txbResultNote.Location = new System.Drawing.Point(433, 416);
+            this.txbResultNote.Location = new System.Drawing.Point(481, 431);
             this.txbResultNote.MaxLength = 32767;
             this.txbResultNote.Multiline = true;
             this.txbResultNote.Name = "txbResultNote";
             this.txbResultNote.ReadOnly = true;
-            this.txbResultNote.Size = new System.Drawing.Size(391, 251);
+            this.txbResultNote.Size = new System.Drawing.Size(434, 229);
             this.txbResultNote.Style = MetroSet_UI.Design.Style.Light;
             this.txbResultNote.StyleManager = null;
             this.txbResultNote.TabIndex = 7;
@@ -399,9 +411,9 @@
             // metroSetLabel6
             // 
             this.metroSetLabel6.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel6.Location = new System.Drawing.Point(433, 390);
+            this.metroSetLabel6.Location = new System.Drawing.Point(481, 406);
             this.metroSetLabel6.Name = "metroSetLabel6";
-            this.metroSetLabel6.Size = new System.Drawing.Size(199, 23);
+            this.metroSetLabel6.Size = new System.Drawing.Size(221, 22);
             this.metroSetLabel6.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel6.StyleManager = null;
             this.metroSetLabel6.TabIndex = 7;
@@ -418,7 +430,7 @@
             this.btnEditEntry.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnEditEntry.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnEditEntry.HoverTextColor = System.Drawing.Color.White;
-            this.btnEditEntry.Location = new System.Drawing.Point(120, 685);
+            this.btnEditEntry.Location = new System.Drawing.Point(128, 694);
             this.btnEditEntry.Name = "btnEditEntry";
             this.btnEditEntry.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnEditEntry.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -426,7 +438,7 @@
             this.btnEditEntry.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnEditEntry.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnEditEntry.PressTextColor = System.Drawing.Color.White;
-            this.btnEditEntry.Size = new System.Drawing.Size(96, 40);
+            this.btnEditEntry.Size = new System.Drawing.Size(107, 40);
             this.btnEditEntry.Style = MetroSet_UI.Design.Style.Light;
             this.btnEditEntry.StyleManager = null;
             this.btnEditEntry.TabIndex = 11;
@@ -444,7 +456,7 @@
             this.btnDeleteEntry.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnDeleteEntry.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnDeleteEntry.HoverTextColor = System.Drawing.Color.White;
-            this.btnDeleteEntry.Location = new System.Drawing.Point(222, 685);
+            this.btnDeleteEntry.Location = new System.Drawing.Point(241, 694);
             this.btnDeleteEntry.Name = "btnDeleteEntry";
             this.btnDeleteEntry.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnDeleteEntry.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -452,7 +464,7 @@
             this.btnDeleteEntry.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnDeleteEntry.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnDeleteEntry.PressTextColor = System.Drawing.Color.White;
-            this.btnDeleteEntry.Size = new System.Drawing.Size(96, 40);
+            this.btnDeleteEntry.Size = new System.Drawing.Size(107, 40);
             this.btnDeleteEntry.Style = MetroSet_UI.Design.Style.Light;
             this.btnDeleteEntry.StyleManager = null;
             this.btnDeleteEntry.TabIndex = 11;
@@ -470,7 +482,7 @@
             this.btnAddEntry.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnAddEntry.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnAddEntry.HoverTextColor = System.Drawing.Color.White;
-            this.btnAddEntry.Location = new System.Drawing.Point(18, 685);
+            this.btnAddEntry.Location = new System.Drawing.Point(15, 694);
             this.btnAddEntry.Name = "btnAddEntry";
             this.btnAddEntry.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnAddEntry.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -478,7 +490,7 @@
             this.btnAddEntry.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnAddEntry.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnAddEntry.PressTextColor = System.Drawing.Color.White;
-            this.btnAddEntry.Size = new System.Drawing.Size(96, 40);
+            this.btnAddEntry.Size = new System.Drawing.Size(107, 40);
             this.btnAddEntry.Style = MetroSet_UI.Design.Style.Light;
             this.btnAddEntry.StyleManager = null;
             this.btnAddEntry.TabIndex = 11;
@@ -496,7 +508,7 @@
             this.btnSearch.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnSearch.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnSearch.HoverTextColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(676, 105);
+            this.btnSearch.Location = new System.Drawing.Point(540, 110);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnSearch.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -504,7 +516,7 @@
             this.btnSearch.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnSearch.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnSearch.PressTextColor = System.Drawing.Color.White;
-            this.btnSearch.Size = new System.Drawing.Size(148, 37);
+            this.btnSearch.Size = new System.Drawing.Size(92, 37);
             this.btnSearch.Style = MetroSet_UI.Design.Style.Light;
             this.btnSearch.StyleManager = null;
             this.btnSearch.TabIndex = 11;
@@ -523,7 +535,7 @@
             this.btnSaveEntry.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnSaveEntry.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnSaveEntry.HoverTextColor = System.Drawing.Color.White;
-            this.btnSaveEntry.Location = new System.Drawing.Point(610, 685);
+            this.btnSaveEntry.Location = new System.Drawing.Point(694, 694);
             this.btnSaveEntry.Name = "btnSaveEntry";
             this.btnSaveEntry.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnSaveEntry.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -531,7 +543,7 @@
             this.btnSaveEntry.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnSaveEntry.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnSaveEntry.PressTextColor = System.Drawing.Color.White;
-            this.btnSaveEntry.Size = new System.Drawing.Size(96, 40);
+            this.btnSaveEntry.Size = new System.Drawing.Size(107, 40);
             this.btnSaveEntry.Style = MetroSet_UI.Design.Style.Light;
             this.btnSaveEntry.StyleManager = null;
             this.btnSaveEntry.TabIndex = 8;
@@ -556,11 +568,11 @@
             this.cbxAllMembers.Font = new System.Drawing.Font("Calibri Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxAllMembers.FormattingEnabled = true;
             this.cbxAllMembers.ItemHeight = 20;
-            this.cbxAllMembers.Location = new System.Drawing.Point(501, 73);
+            this.cbxAllMembers.Location = new System.Drawing.Point(638, 81);
             this.cbxAllMembers.Name = "cbxAllMembers";
             this.cbxAllMembers.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cbxAllMembers.SelectedItemForeColor = System.Drawing.Color.White;
-            this.cbxAllMembers.Size = new System.Drawing.Size(323, 26);
+            this.cbxAllMembers.Size = new System.Drawing.Size(278, 26);
             this.cbxAllMembers.Style = MetroSet_UI.Design.Style.Light;
             this.cbxAllMembers.StyleManager = null;
             this.cbxAllMembers.TabIndex = 12;
@@ -571,9 +583,9 @@
             // txbSearch
             // 
             this.txbSearch.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSearch.Location = new System.Drawing.Point(12, 105);
+            this.txbSearch.Location = new System.Drawing.Point(15, 110);
             this.txbSearch.Name = "txbSearch";
-            this.txbSearch.Size = new System.Drawing.Size(659, 37);
+            this.txbSearch.Size = new System.Drawing.Size(519, 37);
             this.txbSearch.TabIndex = 13;
             this.txbSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbSearch_KeyDown_1);
             this.txbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txbSearch_KeyDown);
@@ -582,9 +594,9 @@
             // metroSetLabel7
             // 
             this.metroSetLabel7.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel7.Location = new System.Drawing.Point(12, 79);
+            this.metroSetLabel7.Location = new System.Drawing.Point(15, 81);
             this.metroSetLabel7.Name = "metroSetLabel7";
-            this.metroSetLabel7.Size = new System.Drawing.Size(364, 23);
+            this.metroSetLabel7.Size = new System.Drawing.Size(404, 22);
             this.metroSetLabel7.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel7.StyleManager = null;
             this.metroSetLabel7.TabIndex = 7;
@@ -595,9 +607,9 @@
             // lblResultCount
             // 
             this.lblResultCount.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultCount.Location = new System.Drawing.Point(12, 270);
+            this.lblResultCount.Location = new System.Drawing.Point(13, 303);
             this.lblResultCount.Name = "lblResultCount";
-            this.lblResultCount.Size = new System.Drawing.Size(670, 23);
+            this.lblResultCount.Size = new System.Drawing.Size(901, 20);
             this.lblResultCount.Style = MetroSet_UI.Design.Style.Light;
             this.lblResultCount.StyleManager = null;
             this.lblResultCount.TabIndex = 7;
@@ -614,7 +626,7 @@
             this.btnAbort.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnAbort.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnAbort.HoverTextColor = System.Drawing.Color.White;
-            this.btnAbort.Location = new System.Drawing.Point(712, 685);
+            this.btnAbort.Location = new System.Drawing.Point(807, 694);
             this.btnAbort.Name = "btnAbort";
             this.btnAbort.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnAbort.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -622,7 +634,7 @@
             this.btnAbort.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnAbort.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnAbort.PressTextColor = System.Drawing.Color.White;
-            this.btnAbort.Size = new System.Drawing.Size(96, 40);
+            this.btnAbort.Size = new System.Drawing.Size(107, 40);
             this.btnAbort.Style = MetroSet_UI.Design.Style.Light;
             this.btnAbort.StyleManager = null;
             this.btnAbort.TabIndex = 8;
@@ -640,7 +652,7 @@
             this.btnAlphabetEmail1.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnAlphabetEmail1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnAlphabetEmail1.HoverTextColor = System.Drawing.Color.White;
-            this.btnAlphabetEmail1.Location = new System.Drawing.Point(400, 562);
+            this.btnAlphabetEmail1.Location = new System.Drawing.Point(443, 558);
             this.btnAlphabetEmail1.Name = "btnAlphabetEmail1";
             this.btnAlphabetEmail1.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnAlphabetEmail1.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -648,7 +660,7 @@
             this.btnAlphabetEmail1.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnAlphabetEmail1.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnAlphabetEmail1.PressTextColor = System.Drawing.Color.White;
-            this.btnAlphabetEmail1.Size = new System.Drawing.Size(27, 31);
+            this.btnAlphabetEmail1.Size = new System.Drawing.Size(30, 30);
             this.btnAlphabetEmail1.Style = MetroSet_UI.Design.Style.Light;
             this.btnAlphabetEmail1.StyleManager = null;
             this.btnAlphabetEmail1.TabIndex = 11;
@@ -666,7 +678,7 @@
             this.btnAlphabetemail2.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnAlphabetemail2.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnAlphabetemail2.HoverTextColor = System.Drawing.Color.White;
-            this.btnAlphabetemail2.Location = new System.Drawing.Point(400, 599);
+            this.btnAlphabetemail2.Location = new System.Drawing.Point(443, 594);
             this.btnAlphabetemail2.Name = "btnAlphabetemail2";
             this.btnAlphabetemail2.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnAlphabetemail2.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -674,7 +686,7 @@
             this.btnAlphabetemail2.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnAlphabetemail2.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnAlphabetemail2.PressTextColor = System.Drawing.Color.White;
-            this.btnAlphabetemail2.Size = new System.Drawing.Size(27, 31);
+            this.btnAlphabetemail2.Size = new System.Drawing.Size(30, 30);
             this.btnAlphabetemail2.Style = MetroSet_UI.Design.Style.Light;
             this.btnAlphabetemail2.StyleManager = null;
             this.btnAlphabetemail2.TabIndex = 11;
@@ -692,7 +704,7 @@
             this.btnAlphabetEmail3.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnAlphabetEmail3.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.btnAlphabetEmail3.HoverTextColor = System.Drawing.Color.White;
-            this.btnAlphabetEmail3.Location = new System.Drawing.Point(400, 636);
+            this.btnAlphabetEmail3.Location = new System.Drawing.Point(443, 630);
             this.btnAlphabetEmail3.Name = "btnAlphabetEmail3";
             this.btnAlphabetEmail3.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.btnAlphabetEmail3.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -700,7 +712,7 @@
             this.btnAlphabetEmail3.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnAlphabetEmail3.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
             this.btnAlphabetEmail3.PressTextColor = System.Drawing.Color.White;
-            this.btnAlphabetEmail3.Size = new System.Drawing.Size(27, 31);
+            this.btnAlphabetEmail3.Size = new System.Drawing.Size(30, 30);
             this.btnAlphabetEmail3.Style = MetroSet_UI.Design.Style.Light;
             this.btnAlphabetEmail3.StyleManager = null;
             this.btnAlphabetEmail3.TabIndex = 11;
@@ -718,7 +730,7 @@
             this.btnOptions.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnOptions.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.btnOptions.HoverTextColor = System.Drawing.Color.White;
-            this.btnOptions.Location = new System.Drawing.Point(676, 270);
+            this.btnOptions.Location = new System.Drawing.Point(771, 275);
             this.btnOptions.Name = "btnOptions";
             this.btnOptions.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnOptions.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -726,7 +738,7 @@
             this.btnOptions.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnOptions.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnOptions.PressTextColor = System.Drawing.Color.White;
-            this.btnOptions.Size = new System.Drawing.Size(148, 23);
+            this.btnOptions.Size = new System.Drawing.Size(145, 20);
             this.btnOptions.Style = MetroSet_UI.Design.Style.Light;
             this.btnOptions.StyleManager = null;
             this.btnOptions.TabIndex = 14;
@@ -746,7 +758,7 @@
             this.chbSearchDW.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.chbSearchDW.DisabledCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.chbSearchDW.DisabledUnCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.chbSearchDW.Location = new System.Drawing.Point(686, 239);
+            this.chbSearchDW.Location = new System.Drawing.Point(860, 187);
             this.chbSearchDW.Name = "chbSearchDW";
             this.chbSearchDW.Size = new System.Drawing.Size(58, 22);
             this.chbSearchDW.Style = MetroSet_UI.Design.Style.Light;
@@ -771,7 +783,7 @@
             this.chbSearchNames.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.chbSearchNames.DisabledCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.chbSearchNames.DisabledUnCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.chbSearchNames.Location = new System.Drawing.Point(686, 209);
+            this.chbSearchNames.Location = new System.Drawing.Point(860, 153);
             this.chbSearchNames.Name = "chbSearchNames";
             this.chbSearchNames.Size = new System.Drawing.Size(58, 22);
             this.chbSearchNames.Style = MetroSet_UI.Design.Style.Light;
@@ -796,7 +808,7 @@
             this.chbSearchNotes.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.chbSearchNotes.DisabledCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.chbSearchNotes.DisabledUnCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.chbSearchNotes.Location = new System.Drawing.Point(686, 269);
+            this.chbSearchNotes.Location = new System.Drawing.Point(860, 221);
             this.chbSearchNotes.Name = "chbSearchNotes";
             this.chbSearchNotes.Size = new System.Drawing.Size(58, 22);
             this.chbSearchNotes.Style = MetroSet_UI.Design.Style.Light;
@@ -813,9 +825,9 @@
             // metroSetLabel8
             // 
             this.metroSetLabel8.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel8.Location = new System.Drawing.Point(676, 176);
+            this.metroSetLabel8.Location = new System.Drawing.Point(773, 155);
             this.metroSetLabel8.Name = "metroSetLabel8";
-            this.metroSetLabel8.Size = new System.Drawing.Size(83, 23);
+            this.metroSetLabel8.Size = new System.Drawing.Size(81, 20);
             this.metroSetLabel8.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel8.StyleManager = null;
             this.metroSetLabel8.TabIndex = 7;
@@ -827,9 +839,9 @@
             // metroSetLabel9
             // 
             this.metroSetLabel9.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel9.Location = new System.Drawing.Point(676, 205);
+            this.metroSetLabel9.Location = new System.Drawing.Point(773, 189);
             this.metroSetLabel9.Name = "metroSetLabel9";
-            this.metroSetLabel9.Size = new System.Drawing.Size(83, 23);
+            this.metroSetLabel9.Size = new System.Drawing.Size(81, 20);
             this.metroSetLabel9.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel9.StyleManager = null;
             this.metroSetLabel9.TabIndex = 7;
@@ -841,9 +853,9 @@
             // metroSetLabel10
             // 
             this.metroSetLabel10.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel10.Location = new System.Drawing.Point(676, 234);
+            this.metroSetLabel10.Location = new System.Drawing.Point(773, 223);
             this.metroSetLabel10.Name = "metroSetLabel10";
-            this.metroSetLabel10.Size = new System.Drawing.Size(83, 23);
+            this.metroSetLabel10.Size = new System.Drawing.Size(81, 20);
             this.metroSetLabel10.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel10.StyleManager = null;
             this.metroSetLabel10.TabIndex = 7;
@@ -855,9 +867,9 @@
             // metroSetLabel11
             // 
             this.metroSetLabel11.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel11.Location = new System.Drawing.Point(712, 151);
+            this.metroSetLabel11.Location = new System.Drawing.Point(798, 121);
             this.metroSetLabel11.Name = "metroSetLabel11";
-            this.metroSetLabel11.Size = new System.Drawing.Size(83, 23);
+            this.metroSetLabel11.Size = new System.Drawing.Size(92, 20);
             this.metroSetLabel11.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel11.StyleManager = null;
             this.metroSetLabel11.TabIndex = 7;
@@ -866,17 +878,132 @@
             this.metroSetLabel11.ThemeAuthor = "Narwin";
             this.metroSetLabel11.ThemeName = "MetroLite";
             // 
+            // btnOpenDocuments
+            // 
+            this.btnOpenDocuments.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnOpenDocuments.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnOpenDocuments.DisabledForeColor = System.Drawing.Color.Gray;
+            this.btnOpenDocuments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnOpenDocuments.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.btnOpenDocuments.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.btnOpenDocuments.HoverTextColor = System.Drawing.Color.White;
+            this.btnOpenDocuments.Location = new System.Drawing.Point(455, 694);
+            this.btnOpenDocuments.Name = "btnOpenDocuments";
+            this.btnOpenDocuments.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnOpenDocuments.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnOpenDocuments.NormalTextColor = System.Drawing.Color.White;
+            this.btnOpenDocuments.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.btnOpenDocuments.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.btnOpenDocuments.PressTextColor = System.Drawing.Color.White;
+            this.btnOpenDocuments.Size = new System.Drawing.Size(107, 40);
+            this.btnOpenDocuments.Style = MetroSet_UI.Design.Style.Light;
+            this.btnOpenDocuments.StyleManager = null;
+            this.btnOpenDocuments.TabIndex = 11;
+            this.btnOpenDocuments.Text = "Dokumente";
+            this.btnOpenDocuments.ThemeAuthor = "Narwin";
+            this.btnOpenDocuments.ThemeName = "MetroLite";
+            this.btnOpenDocuments.Click += new System.EventHandler(this.metroSetButton1_Click);
+            // 
+            // cmsDocuments
+            // 
+            this.cmsDocuments.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tssSeperator,
+            this.tsmAddDocumentEntry});
+            this.cmsDocuments.Name = "cmsDocuments";
+            this.cmsDocuments.Size = new System.Drawing.Size(232, 32);
+            this.cmsDocuments.Style = MetroSet_UI.Design.Style.Light;
+            this.cmsDocuments.StyleManager = null;
+            this.cmsDocuments.ThemeAuthor = "Narwin";
+            this.cmsDocuments.ThemeName = "MetroLite";
+            // 
+            // tssSeperator
+            // 
+            this.tssSeperator.Name = "tssSeperator";
+            this.tssSeperator.Size = new System.Drawing.Size(228, 6);
+            // 
+            // tsmAddDocumentEntry
+            // 
+            this.tsmAddDocumentEntry.Name = "tsmAddDocumentEntry";
+            this.tsmAddDocumentEntry.Size = new System.Drawing.Size(231, 22);
+            this.tsmAddDocumentEntry.Text = "Neues Dokument Hinzufügen";
+            this.tsmAddDocumentEntry.Click += new System.EventHandler(this.tsmAddDocumentEntry_Click);
+            // 
+            // btnSelectImage
+            // 
+            this.btnSelectImage.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnSelectImage.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnSelectImage.DisabledForeColor = System.Drawing.Color.Gray;
+            this.btnSelectImage.Enabled = false;
+            this.btnSelectImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnSelectImage.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.btnSelectImage.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.btnSelectImage.HoverTextColor = System.Drawing.Color.White;
+            this.btnSelectImage.Location = new System.Drawing.Point(638, 280);
+            this.btnSelectImage.Name = "btnSelectImage";
+            this.btnSelectImage.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnSelectImage.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.btnSelectImage.NormalTextColor = System.Drawing.Color.White;
+            this.btnSelectImage.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.btnSelectImage.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.btnSelectImage.PressTextColor = System.Drawing.Color.White;
+            this.btnSelectImage.Size = new System.Drawing.Size(127, 15);
+            this.btnSelectImage.Style = MetroSet_UI.Design.Style.Light;
+            this.btnSelectImage.StyleManager = null;
+            this.btnSelectImage.TabIndex = 19;
+            this.btnSelectImage.Text = "...";
+            this.btnSelectImage.ThemeAuthor = "Narwin";
+            this.btnSelectImage.ThemeName = "MetroLite";
+            this.btnSelectImage.Click += new System.EventHandler(this.btnSelectImage_Click);
+            // 
+            // ofdSelectImage
+            // 
+            this.ofdSelectImage.FileName = "openFileDialog1";
+            // 
+            // tmrLoadImage
+            // 
+            this.tmrLoadImage.Interval = 400;
+            this.tmrLoadImage.Tick += new System.EventHandler(this.tmrLoadImage_Tick);
+            // 
+            // metroSetLabel12
+            // 
+            this.metroSetLabel12.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroSetLabel12.Location = new System.Drawing.Point(515, 81);
+            this.metroSetLabel12.Name = "metroSetLabel12";
+            this.metroSetLabel12.Size = new System.Drawing.Size(118, 22);
+            this.metroSetLabel12.Style = MetroSet_UI.Design.Style.Light;
+            this.metroSetLabel12.StyleManager = null;
+            this.metroSetLabel12.TabIndex = 7;
+            this.metroSetLabel12.Text = "Schnellwahl:";
+            this.metroSetLabel12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroSetLabel12.ThemeAuthor = "Narwin";
+            this.metroSetLabel12.ThemeName = "MetroLite";
+            // 
+            // pbxMemberImage
+            // 
+            this.pbxMemberImage.BackColor = System.Drawing.Color.White;
+            this.pbxMemberImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxMemberImage.Location = new System.Drawing.Point(638, 110);
+            this.pbxMemberImage.Name = "pbxMemberImage";
+            this.pbxMemberImage.Size = new System.Drawing.Size(127, 171);
+            this.pbxMemberImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxMemberImage.TabIndex = 18;
+            this.pbxMemberImage.TabStop = false;
+            this.pbxMemberImage.Click += new System.EventHandler(this.pbxMemberImage_Click);
+            // 
             // DialAssist
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 738);
+            this.ClientSize = new System.Drawing.Size(928, 747);
+            this.Controls.Add(this.btnSelectImage);
+            this.Controls.Add(this.pbxMemberImage);
             this.Controls.Add(this.chbSearchNotes);
             this.Controls.Add(this.chbSearchNames);
             this.Controls.Add(this.chbSearchDW);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.txbSearch);
             this.Controls.Add(this.cbxAllMembers);
+            this.Controls.Add(this.btnOpenDocuments);
             this.Controls.Add(this.btnDeleteEntry);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnAbort);
@@ -900,6 +1027,7 @@
             this.Controls.Add(this.metroSetLabel3);
             this.Controls.Add(this.metroSetLabel2);
             this.Controls.Add(this.lblResultCount);
+            this.Controls.Add(this.metroSetLabel12);
             this.Controls.Add(this.metroSetLabel7);
             this.Controls.Add(this.metroSetLabel10);
             this.Controls.Add(this.metroSetLabel9);
@@ -908,13 +1036,15 @@
             this.Controls.Add(this.metroSetLabel1);
             this.Controls.Add(this.lbxResultView);
             this.Controls.Add(this.metroSetControlBox1);
-            this.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "DialAssist";
-            this.Padding = new System.Windows.Forms.Padding(10, 67, 10, 11);
-            this.Text = "Company Name - Dial Assist";
+            this.Padding = new System.Windows.Forms.Padding(11, 58, 11, 10);
+            this.Text = "Lebenshilfe OÖ - Dial Assist";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DialAssist_FormClosing);
+            this.cmsDocuments.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxMemberImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -958,6 +1088,15 @@
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel9;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel10;
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel11;
+        private MetroSet_UI.Controls.MetroSetButton btnOpenDocuments;
+        private MetroSet_UI.Controls.MetroSetContextMenuStrip cmsDocuments;
+        private System.Windows.Forms.ToolStripSeparator tssSeperator;
+        private System.Windows.Forms.ToolStripMenuItem tsmAddDocumentEntry;
+        private System.Windows.Forms.PictureBox pbxMemberImage;
+        private MetroSet_UI.Controls.MetroSetButton btnSelectImage;
+        private System.Windows.Forms.OpenFileDialog ofdSelectImage;
+        private System.Windows.Forms.Timer tmrLoadImage;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel12;
     }
 }
 

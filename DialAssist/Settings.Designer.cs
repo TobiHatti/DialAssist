@@ -50,7 +50,7 @@
             this.chbSearchNames.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.chbSearchNames.DisabledCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.chbSearchNames.DisabledUnCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.chbSearchNames.Location = new System.Drawing.Point(246, 94);
+            this.chbSearchNames.Location = new System.Drawing.Point(246, 93);
             this.chbSearchNames.Name = "chbSearchNames";
             this.chbSearchNames.Size = new System.Drawing.Size(58, 22);
             this.chbSearchNames.Style = MetroSet_UI.Design.Style.Light;
@@ -81,7 +81,7 @@
             // metroSetLabel1
             // 
             this.metroSetLabel1.Font = new System.Drawing.Font("Calibri Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroSetLabel1.Location = new System.Drawing.Point(14, 182);
+            this.metroSetLabel1.Location = new System.Drawing.Point(14, 183);
             this.metroSetLabel1.Name = "metroSetLabel1";
             this.metroSetLabel1.Size = new System.Drawing.Size(254, 23);
             this.metroSetLabel1.Style = MetroSet_UI.Design.Style.Light;
@@ -117,7 +117,7 @@
             this.chbSearchDW.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.chbSearchDW.DisabledCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.chbSearchDW.DisabledUnCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.chbSearchDW.Location = new System.Drawing.Point(246, 153);
+            this.chbSearchDW.Location = new System.Drawing.Point(246, 152);
             this.chbSearchDW.Name = "chbSearchDW";
             this.chbSearchDW.Size = new System.Drawing.Size(58, 22);
             this.chbSearchDW.Style = MetroSet_UI.Design.Style.Light;
